@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SimulasiCucian;
 use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +16,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('dashboard', [DashboardController::class, 'index']);
-
-// Authenticate
+// LOGIN
 Route::get('/login', [UserController::class, 'index'])->name('login');
+Route::post('/login/cek', [UserController::class, 'cekLogin'])->name('cekLogin');
+
+
+// ROUTES YANG SUDAH LOGIN
+Route::group(['middleware' => 'auth'], function(){
+    Route::resource('user', UserController::class);
+
+    Route::group(['middleware' => 'auth'], function(){
+        Route::get('dashboard', [DashboardController::class, 'index']);
+        Route::resource('user', UserController::class);
+    });
+});
 
 Route::get('simulasi-cucian', [SimulasiCucian::class, 'index'])->name('simulasi-cucian');
