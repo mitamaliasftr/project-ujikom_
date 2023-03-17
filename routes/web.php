@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SimulasiCucian;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('dashboard', [DashboardController::class, 'index']);
+
+Route::get('simulasi-cucian', [SimulasiCucian::class, 'index'])->name('simulasi-cucian');

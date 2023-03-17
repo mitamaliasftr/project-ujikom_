@@ -29,3 +29,4 @@
         <!-- partial -->
         @yield('content')
           <!-- content-wrapper ends -->
+          @include('base.footer')
