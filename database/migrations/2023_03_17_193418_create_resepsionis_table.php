@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('resepsionis', function (Blueprint $table) {
             $table->id();
+            $table->integer('id_pemesan')->unsigned();
+            $table->integer('id_reservasi')->unsigned();
             $table->timestamps();
         });
     }

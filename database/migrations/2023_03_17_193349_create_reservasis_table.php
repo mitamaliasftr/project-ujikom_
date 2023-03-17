@@ -13,8 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('reservasis', function (Blueprint $table) {
+        Schema::create('reservasi', function (Blueprint $table) {
             $table->id();
+            $table->integer('id_pemesan')->unsigned();
+            $table->integer('id_kamar')->unsigned();
+            $table->date('tgl_cekin');
+            $table->date('tgl_cekout');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reservasis');
+        Schema::dropIfExists('reservasi');
     }
 };
