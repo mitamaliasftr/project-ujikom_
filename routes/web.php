@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SimulasiCucian;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,5 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('dashboard', [DashboardController::class, 'index']);
+
+// Authenticate
+Route::get('/login', [UserController::class, 'index'])->name('login');
 
 Route::get('simulasi-cucian', [SimulasiCucian::class, 'index'])->name('simulasi-cucian');

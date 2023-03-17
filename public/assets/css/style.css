@@ -13693,6 +13693,11 @@ dl {
 /*-------------------------------------------------------------------*/
 /* === Landing screens === */
 /* Auth */
+
+.auth.login-bg{
+  background: url("assets/image/login.jpg");
+  background-size: cover;
+}
 .auth .auth-form-light {
   background: #ffffff; }
   .auth .auth-form-light select {
