@@ -24,7 +24,13 @@
         <li class="nav-item">
             <a class="nav-link" href="{{ route('simulasi-cucian') }}">
                 <span class="menu-title">Simulasi Cucian</span>
-                <i class="mdi mdi-tree menu-icon"></i>
+                <i class="mdi mdi-washing-machine menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('logout') }}">
+                <span class="menu-title">Logout</span>
+                <i class="mdi mdi-logout text-danger menu-icon"></i>
             </a>
         </li>
     </ul>

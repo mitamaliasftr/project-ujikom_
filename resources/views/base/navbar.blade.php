@@ -31,7 +31,7 @@
                     </div>
                 </a>
                 <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" href="{{ route('logout') }}">
                         <i class="mdi mdi-logout me-2 text-danger text-center"></i> Logout</a>
                 </div>
             </li>

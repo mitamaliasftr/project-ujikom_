@@ -25,6 +25,6 @@ class cekUserLogin
         if($user->level == $rules)
             return $next($request);
 
-        return redirect('login')->with('error', 'Kamu tidak memiliki hak akses!');
+        return redirect('login')->with('error', 'Anda tidak memiliki hak akses!');
     }
 }

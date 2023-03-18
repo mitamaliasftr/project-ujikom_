@@ -44,4 +44,14 @@ class UserController extends Controller
             'nofound' => 'Username atau Password salah!'
         ])->onlyInput('username');
     }
+
+    // LOGOUT
+    public function logout(Request $request){
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('login');
+    }
 }
